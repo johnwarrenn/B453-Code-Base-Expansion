@@ -1,0 +1,165 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://LoseMenu/Lose Screen.png" type="Texture" id=1]
+[ext_resource path="res://Pause/Restart_HoverState.png" type="Texture" id=2]
+[ext_resource path="res://Pause/Restart_NormalState.png" type="Texture" id=3]
+[ext_resource path="res://Pause/Restart_PressedState.png" type="Texture" id=4]
+[ext_resource path="res://LoseMenu/LoseMenu.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=2]
+resource_name = "death"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CanvasLayer/Polygon2D4:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 85.7028, -0.25, 0, 0.25, 0, 72.6449, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("CanvasLayer/Polygon2D2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -86.9203, -0.25, 0, 0.25, 0, -107.206, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("CanvasLayer/Polygon2D3:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 172.273, -0.25, 0, 0.25, 0, 152.81, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("CanvasLayer/Polygon2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -16.9156, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "rest"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CanvasLayer/Polygon2D4:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 85.7028, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("CanvasLayer/Polygon2D2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -86.9203, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("CanvasLayer/Polygon2D3:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 172.273, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("CanvasLayer/Polygon2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="LoseMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 373.0
+margin_top = 391.0
+margin_right = -332.0
+margin_bottom = -200.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -74, 185, -93, 1117, -490, 1129, -448, 672 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="CanvasLayer"]
+position = Vector2( 1175, 1080 )
+rotation = -1.51705
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -74, 185, -93, 1117, -490, 1129, -448, 672 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="CanvasLayer"]
+position = Vector2( 1959, 407 )
+rotation = 3.00673
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -74, 185, -93, 1117, -490, 1129, -448, 672 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="CanvasLayer"]
+position = Vector2( 740, -35 )
+rotation = 1.4958
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -74, 185, -93, 1117, -490, 1129, -448, 672 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/death = SubResource( 2 )
+anims/rest = SubResource( 3 )
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureButton" to="." method="_on_TextureButton_pressed"]

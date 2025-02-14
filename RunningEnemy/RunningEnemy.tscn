@@ -1,0 +1,318 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemy/sprEnDefault-01.png" type="Texture" id=2]
+[ext_resource path="res://Enemy/Run/sprEnRun5-01.png" type="Texture" id=3]
+[ext_resource path="res://Enemy/Run/sprEnRun7-01.png" type="Texture" id=4]
+[ext_resource path="res://Enemy/Run/sprEnRun2-01.png" type="Texture" id=5]
+[ext_resource path="res://Enemy/Run/sprEnRun6-01.png" type="Texture" id=6]
+[ext_resource path="res://Enemy/Run/sprEnRun4-01.png" type="Texture" id=7]
+[ext_resource path="res://Enemy/Run/sprEnRun3-01.png" type="Texture" id=8]
+[ext_resource path="res://Enemy/Run/sprEnRun1-01.png" type="Texture" id=9]
+[ext_resource path="res://Enemy/Attack/sprEnAtk-01.png" type="Texture" id=10]
+[ext_resource path="res://RunningEnemy/RunningEnemy.gd" type="Script" id=11]
+
+[sub_resource type="Shader" id=11]
+code = "shader_type canvas_item;
+
+// Makes character more white
+// pls don't sue me for whitewashing, kai wanted this.
+uniform float whiteness = 0;
+
+void fragment() {
+	float alpha = texture(TEXTURE, UV).a;
+	float red = texture(TEXTURE, UV).r;
+	float green = texture(TEXTURE, UV).g;
+	float blue = texture(TEXTURE, UV).b;
+	COLOR.r = whiteness + (1.0 - whiteness)*red;
+	COLOR.g = whiteness + (1.0 - whiteness)*green;
+	COLOR.b = whiteness + (1.0 - whiteness)*blue;
+	COLOR.a = alpha;
+}"
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = SubResource( 11 )
+shader_param/whiteness = 0.0
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 60.0
+height = 195.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1451, 121 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 157, 86.5 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "attack"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimatedSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "attack", false ],
+"method": "play"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 99, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "default"
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimatedSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "default", false ],
+"method": "play"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "run"
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimatedSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "run", false ],
+"method": "play"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 267, 108 )
+
+[sub_resource type="Animation" id=14]
+resource_name = "Hurt"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/whiteness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/whiteness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="Enemy" instance=ExtResource( 1 )]
+script = ExtResource( 11 )
+score = 150
+
+[node name="AnimatedSprite" parent="." index="0"]
+material = SubResource( 12 )
+frames = SubResource( 13 )
+playing = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( -44, 75 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -44, 75 )
+shape = SubResource( 9 )
+
+[node name="Sight" type="Area2D" parent="." index="3"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" index="0"]
+position = Vector2( -2, 111 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hitbox" parent="." index="4"]
+visible = true
+damage = 1.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 246, 142.5 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+anims/RESET = SubResource( 7 )
+anims/attack = SubResource( 6 )
+anims/default = SubResource( 3 )
+anims/run = SubResource( 5 )
+
+[node name="AttackCDTimer" type="Timer" parent="." index="6"]
+one_shot = true
+
+[node name="StrikingDistance" type="Area2D" parent="." index="7"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StrikingDistance" index="0"]
+position = Vector2( -1, 112 )
+shape = SubResource( 8 )
+
+[node name="AttackLengthTimer" type="Timer" parent="." index="8"]
+wait_time = 0.2
+one_shot = true
+
+[node name="HurtAnimator" parent="." index="9"]
+anims/Hurt = SubResource( 14 )
+anims/RESET = SubResource( 15 )
+
+[connection signal="body_entered" from="Sight" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="AttackCDTimer" to="." method="_on_AttackCDTimer_timeout"]
+[connection signal="body_entered" from="StrikingDistance" to="." method="_on_StrikingDistance_body_entered"]
+[connection signal="body_exited" from="StrikingDistance" to="." method="_on_StrikingDistance_body_exited"]
+[connection signal="timeout" from="AttackLengthTimer" to="." method="_on_AttackLengthTimer_timeout"]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]

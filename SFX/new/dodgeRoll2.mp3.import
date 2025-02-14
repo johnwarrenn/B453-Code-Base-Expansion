@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dodgeRoll2.mp3-e589268ec0982662bf39e337f460bd02.mp3str"
+
+[deps]
+
+source_file="res://SFX/new/dodgeRoll2.mp3"
+dest_files=[ "res://.import/dodgeRoll2.mp3-e589268ec0982662bf39e337f460bd02.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

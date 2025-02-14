@@ -1,0 +1,388 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Hurtbox/Hurtbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Art/Updated/sprPcDefault.png" type="Texture" id=2]
+[ext_resource path="res://Character/Character.gd" type="Script" id=3]
+[ext_resource path="res://BasicAttack/BasicAttack.tscn" type="PackedScene" id=4]
+[ext_resource path="res://outline.shader" type="Shader" id=5]
+[ext_resource path="res://Art/Updated/sprPCrun2-01.png" type="Texture" id=6]
+[ext_resource path="res://Art/Updated/sprPCrun6-01.png" type="Texture" id=7]
+[ext_resource path="res://Art/Updated/sprPCrun5-01.png" type="Texture" id=8]
+[ext_resource path="res://Art/Updated/sprPCrun4-01.png" type="Texture" id=9]
+[ext_resource path="res://Art/Updated/sprPCrun3-01.png" type="Texture" id=10]
+[ext_resource path="res://Art/Updated/sprPCrun1-01.png" type="Texture" id=11]
+[ext_resource path="res://Art/Updated/sprPcHurt-01.png" type="Texture" id=12]
+[ext_resource path="res://Art/Updated/sprPcIdle-01.png" type="Texture" id=13]
+[ext_resource path="res://Art/Updated/sprPCjump2-01.png" type="Texture" id=14]
+[ext_resource path="res://Art/Updated/sprPCjump4-01.png" type="Texture" id=15]
+[ext_resource path="res://Art/Updated/sprPCjump6-01.png" type="Texture" id=16]
+[ext_resource path="res://Art/Updated/sprPCjump5-01.png" type="Texture" id=17]
+[ext_resource path="res://Art/Updated/sprPCRoll5-01.png" type="Texture" id=18]
+[ext_resource path="res://Art/Updated/sprPCRoll2-01.png" type="Texture" id=19]
+[ext_resource path="res://Art/Updated/sprPCRoll1-01.png" type="Texture" id=20]
+[ext_resource path="res://Art/Updated/sprPCRoll3-01.png" type="Texture" id=21]
+[ext_resource path="res://Art/Updated/sprPCjump3-01.png" type="Texture" id=22]
+[ext_resource path="res://Art/Updated/sprPCRoll4-01.png" type="Texture" id=23]
+[ext_resource path="res://Swipes/Player_Swipe_2.png" type="Texture" id=24]
+[ext_resource path="res://Art/Updated/sprPcAtk.png" type="Texture" id=25]
+[ext_resource path="res://Swipes/Player_Swipe_1.png" type="Texture" id=26]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 5 )
+shader_param/Smooth = true
+shader_param/width = 16.0
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+shader_param/pixel_size = 10
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": false,
+"name": "attack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "jumpBefore",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": false,
+"name": "jumpRising",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "jumpLanding",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "roll",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "jumpApex",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "jumpFalling",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 83.5
+height = 219.0
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 83.5
+height = 219.0
+
+[sub_resource type="Animation" id=5]
+resource_name = "Hurt"
+length = 0.75
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("AnimatedSprite:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("AnimatedSprite:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "attack"
+step = 0.05
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimatedSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "attack", false ],
+"method": "play"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "default"
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimatedSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "default", false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "hurt"
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimatedSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "hurt", false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "no_slashes"
+
+[node name="Character" type="KinematicBody2D"]
+collision_mask = 260
+script = ExtResource( 3 )
+basic_attack_template = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 50, 0 )
+frames = SubResource( 1 )
+animation = "attack"
+playing = true
+
+[node name="Hurtbox" parent="." instance=ExtResource( 1 )]
+collision_layer = 2
+collision_mask = 256
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -18, 44 )
+shape = SubResource( 8 )
+
+[node name="BodyShape" type="CollisionShape2D" parent="."]
+position = Vector2( -18, 44 )
+shape = SubResource( 7 )
+
+[node name="HurtAnimator" type="AnimationPlayer" parent="."]
+anims/Hurt = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+
+[node name="DebuffTimer" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="DashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="KnockbackTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.9
+one_shot = true
+
+[node name="KnockbackFreezeTime" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 84, 0 )
+texture = ExtResource( 26 )
+offset = Vector2( 50, 0 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 84, 0 )
+texture = ExtResource( 24 )
+offset = Vector2( 50, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 10 )
+anims/attack = SubResource( 9 )
+anims/default = SubResource( 11 )
+anims/hurt = SubResource( 12 )
+anims/no_slashes = SubResource( 13 )
+
+[connection signal="on_damagers_changed" from="Hurtbox" to="." method="_on_Hurtbox_on_damagers_changed"]
+[connection signal="timeout" from="DebuffTimer" to="." method="_on_DebuffTimer_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_DashCooldown_timeout"]
+[connection signal="timeout" from="KnockbackTimer" to="." method="_on_KnockbackTimer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_AttackCooldown_timeout"]
+[connection signal="timeout" from="KnockbackFreezeTime" to="." method="_on_KnockbackFreezeTime_timeout"]
+
+[editable path="Hurtbox"]

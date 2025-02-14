@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/yatta.mp3-19e6e2b7162441d779fbd2ac9d4322c4.mp3str"
+
+[deps]
+
+source_file="res://SFX/yatta.mp3"
+dest_files=[ "res://.import/yatta.mp3-19e6e2b7162441d779fbd2ac9d4322c4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

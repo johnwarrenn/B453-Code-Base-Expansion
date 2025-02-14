@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/swordClank.mp3-fa409f53b824ce89940b0d769811cd4b.mp3str"
+
+[deps]
+
+source_file="res://SFX/swordClank.mp3"
+dest_files=[ "res://.import/swordClank.mp3-fa409f53b824ce89940b0d769811cd4b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

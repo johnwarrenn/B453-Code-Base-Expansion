@@ -1,0 +1,114 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Enemy/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Hurtbox/Hurtbox.gd" type="Script" id=2]
+[ext_resource path="res://Enemy/Jump/sprEnJump1-01.png" type="Texture" id=3]
+[ext_resource path="res://Enemy/Jump/sprEnJump2-01.png" type="Texture" id=4]
+[ext_resource path="res://Enemy/Run/sprEnRun5-01.png" type="Texture" id=5]
+[ext_resource path="res://Enemy/Run/sprEnRun7-01.png" type="Texture" id=6]
+[ext_resource path="res://Enemy/Jump/sprEnJump5-01.png" type="Texture" id=7]
+[ext_resource path="res://Enemy/Run/sprEnRun1-01.png" type="Texture" id=8]
+[ext_resource path="res://Enemy/Attack/sprEnJumpAtk-01.png" type="Texture" id=9]
+[ext_resource path="res://Enemy/Run/sprEnRun3-01.png" type="Texture" id=10]
+[ext_resource path="res://Enemy/Jump/sprEnJump3-01.png" type="Texture" id=11]
+[ext_resource path="res://Enemy/Run/sprEnRun6-01.png" type="Texture" id=12]
+[ext_resource path="res://Enemy/Jump/sprEnJump4-01.png" type="Texture" id=13]
+[ext_resource path="res://Enemy/Attack/sprEnAtk-01.png" type="Texture" id=14]
+[ext_resource path="res://Enemy/Attack/sprEnAtkThrow1-01.png" type="Texture" id=15]
+[ext_resource path="res://Enemy/Attack/sprEnAtkThrow2-01.png" type="Texture" id=16]
+[ext_resource path="res://Enemy/Run/sprEnRun2-01.png" type="Texture" id=17]
+[ext_resource path="res://Enemy/sprEnDefault-01.png" type="Texture" id=18]
+[ext_resource path="res://Enemy/Run/sprEnRun4-01.png" type="Texture" id=19]
+[ext_resource path="res://Enemy/Jump/sprEnJump6-01.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Jump5Falling",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump2Buildup",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 19 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "Jump3Rising",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Jump1Start",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Throw",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Jump4Apex",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "AttackJump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "Jump6Landing",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+[node name="Character" type="KinematicBody2D"]
+script = ExtResource( 1 )
+life = 1.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="Body" type="CollisionShape2D" parent="."]
+position = Vector2( -25, 71 )
+scale = Vector2( 11.6401, 8.82899 )
+shape = SubResource( 2 )
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+modulate = Color( 0.027451, 0.396078, 0.556863, 1 )
+position = Vector2( -25, 71 )
+scale = Vector2( 11.562, 8.829 )
+shape = SubResource( 3 )
+
+[node name="HurtAnimator" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite")
+
+[node name="DebuffTimer" type="Timer" parent="."]
+
+[node name="KnockbackTimer" type="Timer" parent="."]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PerituneMaterial_Amenoshita2.mp3-a55863e517730acd0c1753e2a1a4fb28.mp3str"
+
+[deps]
+
+source_file="res://PerituneMaterial_Amenoshita2.mp3"
+dest_files=[ "res://.import/PerituneMaterial_Amenoshita2.mp3-a55863e517730acd0c1753e2a1a4fb28.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

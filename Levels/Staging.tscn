@@ -1,0 +1,2500 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Obstacles/Platform3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Camera/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Character/Character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Obstacles/Platform1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Goal/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ShootyEnemy/ShootyEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene07345.png" type="Texture" id=7]
+[ext_resource path="res://Trigger/trigger.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Art/MiscSprites_spriteExport.png" type="Texture" id=9]
+[ext_resource path="res://ShieldEnemy/ShieldEnemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://JumpyEnemy/JumpyEnemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SwivelLight/SwivelLight.tscn" type="PackedScene" id=12]
+[ext_resource path="res://HEART-01.png" type="Texture" id=13]
+[ext_resource path="res://Maiden-01.png" type="Texture" id=14]
+[ext_resource path="res://rope-01.png" type="Texture" id=15]
+[ext_resource path="res://RunningEnemy/RunningEnemy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://YinYang/YinYang.tscn" type="PackedScene" id=17]
+
+[node name="LevelStaging" type="Node2D"]
+
+[node name="TriggerNode2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Area2D2" parent="TriggerNode2D" instance=ExtResource( 8 )]
+position = Vector2( 716, -1334 )
+
+[node name="Area2D" parent="TriggerNode2D" instance=ExtResource( 8 )]
+position = Vector2( 1635, -837 )
+
+[node name="GeometryBG" type="Node2D" parent="."]
+position = Vector2( -5, -7 )
+
+[node name="Obstacle65" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -9660, -6156 )
+rotation = 3.14159
+scale = Vector2( 1.5, 2 )
+
+[node name="Polygon2D63" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 1964, -31607 )
+color = Color( 1, 1, 1, 0.976471 )
+polygon = PoolVector2Array( -4485, -500, 260, -280, 3009, -486, 1462, 4855, -4902, 4936 )
+
+[node name="Polygon2D12" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 78227, -2954 )
+rotation = -2.53518e-06
+scale = Vector2( 2, 2 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
+
+[node name="Obstacle31" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 16037, -9937 )
+scale = Vector2( 2, 2 )
+
+[node name="Polygon2D14" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 33586, -13042 )
+rotation = -2.53518e-06
+scale = Vector2( 2, 2 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
+
+[node name="Polygon2D62" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 1964, -31607 )
+color = Color( 1, 1, 1, 0.976471 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="YinYang4" parent="GeometryBG" instance=ExtResource( 17 )]
+position = Vector2( 16172, -21881 )
+scale = Vector2( 4, 4 )
+
+[node name="YinYang5" parent="GeometryBG" instance=ExtResource( 17 )]
+position = Vector2( -26452, -10661 )
+scale = Vector2( 4, 4 )
+
+[node name="Polygon2D15" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 2276, -6406 )
+rotation = 0.00291965
+scale = Vector2( 0.641755, 0.641755 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D16" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 13482, -6302 )
+scale = Vector2( 0.641755, 0.641755 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D17" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -10243, -9794 )
+rotation = 3.14159
+scale = Vector2( 1.422, -1.304 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D19" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -6451, -10991 )
+rotation = 3.14159
+scale = Vector2( 1.422, -1.304 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D20" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -1129, -12402 )
+rotation = 3.14159
+scale = Vector2( 1.422, -1.304 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D21" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 6027, -13936 )
+rotation = 3.14159
+scale = Vector2( 1.422, -1.304 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D25" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -837.001, -16494 )
+rotation = 3.14159
+scale = Vector2( 1.422, -1.304 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D22" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 8517, -15023 )
+rotation = 3.14159
+scale = Vector2( -1.422, -1.304 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D23" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 8747.51, -24957.8 )
+rotation = 3.14159
+scale = Vector2( -3.81929, -3.52277 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D29" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 4456, -26300 )
+rotation = 3.14159
+scale = Vector2( -3.81929, -3.52277 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D24" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -2815.56, -16044.4 )
+rotation = 3.14159
+scale = Vector2( -3.81929, -3.52277 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 1443.62, -2620.95 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D28" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 21147, -20145 )
+rotation = 3.14159
+scale = Vector2( -3.81929, -3.52277 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 1443.62, -2620.95 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="YinYang" parent="GeometryBG/Polygon2D28" instance=ExtResource( 17 )]
+position = Vector2( -5544.22, -1446.89 )
+scale = Vector2( 0.25, 0.284 )
+
+[node name="YinYang2" parent="GeometryBG/Polygon2D28" instance=ExtResource( 17 )]
+position = Vector2( -10274.7, -322.785 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="YinYang3" parent="GeometryBG/Polygon2D28" instance=ExtResource( 17 )]
+position = Vector2( -10274.7, -322.785 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Polygon2D18" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -865.173, -25045.9 )
+rotation = 3.14159
+scale = Vector2( 2.16446, -1.98485 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D13" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 33586, -13042 )
+rotation = 3.14159
+scale = Vector2( -2, -2 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
+
+[node name="Polygon2D27" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 41404, -16247 )
+rotation = 3.14159
+scale = Vector2( -2, -2 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 5, 7 )
+polygon = PoolVector2Array( -29128, -25718, -6461.3, -3176.82, -3123, 143, -7002, 287, -32648, -24712 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 5, 7 )
+color = Color( 0.517647, 0.517647, 0.517647, 1 )
+polygon = PoolVector2Array( -29415, -16954, -13323, 0, -16844, -72, -31570, -15086 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 5, 7 )
+color = Color( 0.243137, 0.243137, 0.243137, 1 )
+polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 5, 7 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+polygon = PoolVector2Array( -29128, -25718, -3123, 143, -7002, 287, -32648, -24712 )
+
+[node name="Polygon2D6" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 5, 7 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+color = Color( 0.517647, 0.517647, 0.517647, 1 )
+polygon = PoolVector2Array( -29415, -16954, -13323, 0, -16844, -72, -31570, -15086 )
+
+[node name="Polygon2D7" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 5, 7 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+color = Color( 0.243137, 0.243137, 0.243137, 1 )
+polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
+
+[node name="Polygon2D8" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 5, 7 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+color = Color( 0.243137, 0.243137, 0.243137, 1 )
+polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
+
+[node name="Polygon2D10" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 7586, -58 )
+scale = Vector2( 0.182129, 0.99292 )
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Obstacle" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 126.398, -24691 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle8" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 6055, -25992 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle25" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 6055, -25992 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle26" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 10322, -25992 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle27" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 14577, -25992 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle3" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -7998, -24691 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle56" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -12015, -24691 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle83" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -16032, -24691 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle84" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -17723, -24691 )
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle2" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -1853.6, -26345 )
+rotation = 0.610865
+scale = Vector2( 2.2, 2 )
+
+[node name="Obstacle4" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -1475.6, -27900 )
+rotation = 0.610865
+scale = Vector2( 2.2, 2 )
+
+[node name="Polygon2D9" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 5, 7 )
+color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+polygon = PoolVector2Array( -9489, -3332, -7836, -1769, -7729, 188, -12757, 116, -12613, -3332 )
+
+[node name="BoundaryNode2D" type="Node2D" parent="GeometryBG"]
+
+[node name="Polygon2D9" type="Polygon2D" parent="GeometryBG/BoundaryNode2D"]
+position = Vector2( -13318, -1109 )
+scale = Vector2( 0.25, 1 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( -5200, -2188 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D10" type="Polygon2D" parent="GeometryBG/BoundaryNode2D"]
+position = Vector2( -7996.19, 237.684 )
+scale = Vector2( 0.195251, 1.00488 )
+color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
+offset = Vector2( -5200, -2188 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D11" type="Polygon2D" parent="GeometryBG/BoundaryNode2D"]
+position = Vector2( -351, -4006 )
+scale = Vector2( 0.195251, 2.13054 )
+color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+offset = Vector2( -5200, -2188 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D" type="Polygon2D" parent="GeometryBG/BoundaryNode2D"]
+position = Vector2( 5, 7 )
+scale = Vector2( 5, 1 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -8192, 0, -4704.88, 0, -1607.22, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="GeometryBG/BoundaryNode2D"]
+position = Vector2( -19322.6, -30073 )
+scale = Vector2( 2.2, 1 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="GeometryBG/BoundaryNode2D"]
+position = Vector2( 19333.4, -30073 )
+scale = Vector2( 2.2, 1 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Obstacle" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -7982.73, 4064 )
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle3" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -7982.73, 4064 )
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle6" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -10355.6, 4016 )
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle7" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -12229.7, 3998 )
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle8" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -13962.5, 3998 )
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle9" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -17991.5, 3971 )
+scale = Vector2( 4, 2 )
+
+[node name="Obstacle4" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -9419.63, 2116.57 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle5" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -8131.97, 1862.95 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle2" parent="GeometryBG/BoundaryNode2D/Polygon2D5" instance=ExtResource( 1 )]
+position = Vector2( -7992.73, 2289 )
+scale = Vector2( 1, 2 )
+
+[node name="Polygon2D6" type="Polygon2D" parent="GeometryBG/BoundaryNode2D"]
+position = Vector2( 19333.4, -30073 )
+scale = Vector2( 2.2, 1 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -6035.76, 4096, -6102.62, 4096, -8192, 4096 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="GeometryBG/BoundaryNode2D"]
+position = Vector2( 28869, -27968 )
+scale = Vector2( 0.1, 10 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Obstacle5" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 6255, -1189 )
+scale = Vector2( 2, 2 )
+
+[node name="Polygon2D11" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -1025, -824 )
+scale = Vector2( 0.182129, 0.328614 )
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Obstacle9" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -8950, -1981 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle15" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -13642, -2416 )
+scale = Vector2( 2, 2 )
+
+[node name="Polygon2D12" type="Polygon2D" parent="GeometryBG/Obstacle15"]
+position = Vector2( 13884.5, -851.054 )
+scale = Vector2( 0.110748, 0.191284 )
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, -84.9707, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D13" type="Polygon2D" parent="GeometryBG/Obstacle15"]
+position = Vector2( 13889.5, -338.501 )
+scale = Vector2( 0.110748, 0.199083 )
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, -84.9707, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D15" type="Polygon2D" parent="GeometryBG/Obstacle15"]
+position = Vector2( 14751.6, -688.39 )
+scale = Vector2( 0.0196228, 0.237317 )
+color = Color( 0.914063, 0.914063, 0.914063, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, -84.9707, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D14" type="Polygon2D" parent="GeometryBG/Obstacle15"]
+position = Vector2( 14036, 503.961 )
+scale = Vector2( 0.126284, 0.240343 )
+color = Color( 0.141176, 0.141176, 0.141176, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, -84.9707, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Obstacle32" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -15218, -2009 )
+scale = Vector2( 2, 2 )
+
+[node name="Polygon2D12" type="Polygon2D" parent="GeometryBG/Obstacle32"]
+position = Vector2( 13884.5, -851.054 )
+scale = Vector2( 0.110748, 0.191284 )
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, -84.9707, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D13" type="Polygon2D" parent="GeometryBG/Obstacle32"]
+position = Vector2( 13889.5, -397.164 )
+scale = Vector2( 0.110748, 0.14525 )
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, -84.9707, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Polygon2D14" type="Polygon2D" parent="GeometryBG/Obstacle32"]
+position = Vector2( 14036, 352.359 )
+scale = Vector2( 0.126284, 0.290771 )
+color = Color( 0.141176, 0.141176, 0.141176, 1 )
+offset = Vector2( -7609.99, -1089.72 )
+polygon = PoolVector2Array( -8192, 0, -84.9707, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Obstacle10" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -11398, -3333 )
+scale = Vector2( 2, 2 )
+
+[node name="Polygon2D31" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -26445, -3472 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport28" type="Sprite" parent="GeometryBG"]
+position = Vector2( -26445, -3472 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D26" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( -29893.2, -28025 )
+scale = Vector2( 0.0778564, 10 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Obstacle60" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 7194, -8082 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle61" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 6737, -11358 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle62" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 12045, -12628 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle63" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 3537, -15193 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle100" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 160, -17814 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle110" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 9234, -21253 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle101" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -1118, -16794 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle16" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -3652, -4596 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle69" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -10037, -11703 )
+scale = Vector2( 0.432883, -20.8416 )
+
+[node name="Obstacle57" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 3895, -6845 )
+rotation = 3.14159
+scale = Vector2( 0.192883, -8.88156 )
+
+[node name="Obstacle58" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 15120, -6768 )
+rotation = 3.14159
+scale = Vector2( 0.192883, -8.88156 )
+
+[node name="Obstacle17" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 2400, -4587 )
+scale = Vector2( 2, 2 )
+
+[node name="SwivelLight" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( 21465, -8410 )
+scale = Vector2( 4, 4 )
+
+[node name="SwivelLight2" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( 1676, -19396 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight7" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( 1676, -19396 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight8" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( -14362, -24470 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight6" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( -24492, -18283 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight3" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( -6036, -14750 )
+
+[node name="SwivelLight13" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( -4680, -24258 )
+
+[node name="Polygon2D54" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 10954.9, -2875.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport50" type="Sprite" parent="GeometryBG"]
+position = Vector2( 10954.9, -2875.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D55" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 11853.9, -2875.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport51" type="Sprite" parent="GeometryBG"]
+position = Vector2( 11853.9, -2875.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D56" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 12985.9, -2875.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport52" type="Sprite" parent="GeometryBG"]
+position = Vector2( 12985.9, -2875.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D57" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 105.875, -5503.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport53" type="Sprite" parent="GeometryBG"]
+position = Vector2( 105.875, -5503.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D58" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 18972.9, -9866.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport54" type="Sprite" parent="GeometryBG"]
+position = Vector2( 18972.9, -9866.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D59" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 19499.9, -9842.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport55" type="Sprite" parent="GeometryBG"]
+position = Vector2( 19499.9, -9842.75 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D60" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 8475.88, -17937.8 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport56" type="Sprite" parent="GeometryBG"]
+position = Vector2( 8475.88, -17937.8 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D61" type="Polygon2D" parent="GeometryBG"]
+position = Vector2( 7418.88, -17937.8 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport57" type="Sprite" parent="GeometryBG"]
+position = Vector2( 7418.88, -17937.8 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="SwivelLight9" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( -9660, -29127 )
+
+[node name="Enemy" parent="GeometryBG" instance=ExtResource( 6 )]
+position = Vector2( 5082, -15623 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Enemy2" parent="GeometryBG" instance=ExtResource( 6 )]
+position = Vector2( 2307, -15575 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight4" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( 5136, -18611 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight10" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( 5136, -18611 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight11" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( 13101, -25257 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight12" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( 16195, -21759 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwivelLight5" parent="GeometryBG" instance=ExtResource( 12 )]
+position = Vector2( 3820, -15730 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Obstacle29" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 19125, -8641 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle85" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 26820, -7035 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle115" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 24280, -9494 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle116" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 27384, -10079 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle117" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 28171, -10826 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle86" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 24004, -5035 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle87" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 22468, -5995 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle88" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 20516, -7083 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle90" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 16388, -6875 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle91" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 17652, -7163 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle93" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 9812, -11995 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle94" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 10041, -14632 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle98" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 8722, -15158 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle99" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 11215, -16073 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle135" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 12998, -16775 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle102" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 15653, -19494 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle103" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 13881, -18266 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle136" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 15050, -18977 )
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle104" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 17954, -19087 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle105" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 17067, -20885 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle106" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 14933, -21724 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle107" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 13207, -22779 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle108" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 11841, -23738 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle109" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 8677, -24673 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle95" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 14683, -13933 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle96" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 15757, -15007 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle142" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 25235, -2895 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle137" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 16061, -15959 )
+scale = Vector2( 0.25, 2 )
+
+[node name="Obstacle138" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 15490, -16607 )
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle97" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 14279, -17081 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle89" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 22404, -8267 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle92" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 22404, -8267 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle30" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 10867, -9592 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle18" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -6381, -7352 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle13" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -14687, -3333 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle14" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -17189, -3333 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle40" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -23632, -781 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle7" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 11818, -1981 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle53" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 10418, -1207 )
+scale = Vector2( 0.15, 2 )
+
+[node name="Obstacle20" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 6624, -3516 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle21" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 12329, -2972 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle42" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 12435, -4485 )
+scale = Vector2( -1.5, 2 )
+
+[node name="Obstacle43" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 11841, -3947 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle46" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 11841, -3947 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle64" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 865, -10050 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle128" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 842, -10997 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle130" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 842, -10997 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle129" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 829, -12042 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle131" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 767, -13778 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle133" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 856, -15094 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle68" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -7904, -4587 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle127" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -8481, -5473 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle77" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -3145, -8597 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle71" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -5435, -20700 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle78" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -8629, -21512 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle139" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -9501, -22200 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle140" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -9501, -22200 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle79" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -13426, -20624 )
+rotation = 3.14159
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle141" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -16039, -19968 )
+rotation = 3.14159
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle80" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -18712, -22076 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle118" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -24757, -23346 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle119" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -21176, -18216 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle120" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -20185, -18647 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle121" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -18991, -20095 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle122" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -18737, -21340 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle81" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -15557, -22641 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle82" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -21156, -23296 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle72" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -2075, -18364 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle124" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -3257, -19321 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle125" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -4986, -20033 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle126" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -7376, -21559 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle73" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -5915, -16220 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle74" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -5915, -16220 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle70" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -1024, -12815 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle111" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -7650, -12768 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle112" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -13864, -10972 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle113" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -10524, -18802 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle114" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -3232, -24298 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle66" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -7652, -17944 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle67" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 1695, -19519 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle75" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 3045, -22533 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle123" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 2725, -23462 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle76" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 5445, -24325 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle52" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -26842, -1787 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle47" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 16075, -3771 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle54" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 14450, -3790 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle48" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 15077, -3040 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle49" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 13571, -4109 )
+rotation = 1.5708
+scale = Vector2( 0.35, 2 )
+
+[node name="Obstacle6" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 7722, -285 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle22" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 10403, 699 )
+rotation = 1.53589
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle23" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 11659, 1389 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle24" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 11665, -1542 )
+rotation = 1.5708
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle19" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 10634, -3551 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle41" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 14220, -3572 )
+rotation = -1.5708
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle44" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 15883, -3334 )
+rotation = -1.5708
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle55" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 18591, -299 )
+rotation = -1.5708
+scale = Vector2( 1, 10 )
+
+[node name="Obstacle59" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 19677, -381 )
+rotation = 1.5708
+scale = Vector2( 1, 4 )
+
+[node name="Obstacle132" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 20457, -396 )
+rotation = 1.5708
+scale = Vector2( 1, 4 )
+
+[node name="Obstacle134" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 20449, -1694 )
+rotation = -1.5708
+scale = Vector2( 1, 4 )
+
+[node name="Obstacle45" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( 15261, -3345 )
+rotation = -1.5708
+scale = Vector2( 1, 2 )
+
+[node name="Obstacle11" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -12622, -1452 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle12" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -16609, -1413 )
+rotation = -1.5708
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle33" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -17450, -886 )
+rotation = -0.902674
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle34" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -22111, -1128 )
+rotation = -1.72693
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle35" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -23636, -1413 )
+rotation = -1.57055
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle36" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -23636, -756.999 )
+rotation = 0.471499
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle50" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -19501, 2839 )
+rotation = 0.471499
+scale = Vector2( 2, 1 )
+
+[node name="Obstacle51" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -20269, 1652 )
+rotation = 1.21126
+scale = Vector2( 2, 1 )
+
+[node name="Obstacle37" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -27228, -1128 )
+rotation = 1.1349
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle38" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -28953, -415 )
+rotation = -0.7962
+scale = Vector2( 2, 1 )
+
+[node name="Obstacle39" parent="GeometryBG" instance=ExtResource( 1 )]
+position = Vector2( -28953, -415 )
+rotation = -0.7962
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Polygon2D11" type="Polygon2D" parent="."]
+position = Vector2( -9169, 2517.24 )
+scale = Vector2( 1, 1.01429 )
+color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+offset = Vector2( 9169, -2530 )
+polygon = PoolVector2Array( -20622, 575, -19934, 2463, -18398, 3423, -10846, 3423, -7950, 3359, -7998, 79, -9355, 97, -9423, 1597, -9414, 2648, -16494, 2767, -18094, 2799, -18798, 1135, -18702, 63, -21150, 63 )
+
+[node name="Obstacle59" parent="." instance=ExtResource( 1 )]
+position = Vector2( -10542, 577 )
+scale = Vector2( 2, 2 )
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Camera" parent="Player" instance=ExtResource( 2 )]
+
+[node name="Character" parent="Player" instance=ExtResource( 3 )]
+position = Vector2( -18, -256 )
+
+[node name="GeometryFG" type="Node2D" parent="."]
+position = Vector2( 7, 0 )
+
+[node name="Polygon2D36" type="Polygon2D" parent="GeometryFG"]
+position = Vector2( -6839, 870 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D34" type="Polygon2D" parent="GeometryFG"]
+position = Vector2( -14709, 2707 )
+scale = Vector2( 0.25, 0.25 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D35" type="Polygon2D" parent="GeometryFG"]
+position = Vector2( -13768, 2665 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 13096, -288, 10936, 3188, -4020, 3436 )
+
+[node name="Polygon2D12" type="Polygon2D" parent="GeometryFG"]
+position = Vector2( -10868.1, 4004.25 )
+scale = Vector2( 6.30466, 2.31061 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( 8602.23, 1984.83 )
+polygon = PoolVector2Array( -10584, -1985, -7441, -1949, -7441, 63, -10638, 63 )
+
+[node name="Obstacle15" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 4700, -814 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle16" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -929, -830 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle20" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 14573, -839 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle17" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -4205, -966 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle21" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 15163, -3801 )
+scale = Vector2( 1, 0.5 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle22" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 15118, -3088 )
+scale = Vector2( 1, 0.5 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle18" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -7421, -950 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle19" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -10613, -950 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle2" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 13846, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle3" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 21504, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle4" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 29184, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle5" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 36864, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle6" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 6144, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle7" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -1536, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle8" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -13221, 87 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle27" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -13221, 87 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle28" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -15314, 53 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle9" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -5053, 126 )
+rotation = 0.0349066
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle23" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -14469, 3491 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle24" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -9495, 3467 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle25" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -14194, 2652 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle26" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -13329, 2533 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle10" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -24576, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle11" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -32256, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle12" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -39936, 76 )
+scale = Vector2( 4, 4 )
+
+[node name="Obstacle13" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( -29337, -12598 )
+rotation = 1.5708
+scale = Vector2( 14, 4 )
+
+[node name="Obstacle14" parent="GeometryFG" instance=ExtResource( 1 )]
+position = Vector2( 27971, -9826 )
+rotation = -1.5708
+scale = Vector2( 14, 4 )
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Obstacle53" parent="." instance=ExtResource( 1 )]
+position = Vector2( -9438, 1370 )
+rotation = 1.5708
+scale = Vector2( 1.2, 2 )
+
+[node name="Obstacle" parent="." instance=ExtResource( 4 )]
+position = Vector2( -6360, -26 )
+rotation = -1.5708
+
+[node name="Obstacle12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 10587, 313 )
+rotation = -1.5708
+
+[node name="Obstacle13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 24595, 780 )
+rotation = 1.5708
+
+[node name="Obstacle54" parent="." instance=ExtResource( 1 )]
+position = Vector2( -7917, 2053 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 25111, 627 )
+rotation = 1.5708
+
+[node name="Obstacle57" parent="." instance=ExtResource( 1 )]
+position = Vector2( -7061, 1260 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle56" parent="." instance=ExtResource( 1 )]
+position = Vector2( -10553, 2232 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle58" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8341, 3198 )
+rotation = -0.148353
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -17852, -45 )
+rotation = -1.5708
+
+[node name="Obstacle25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 26038, -1488 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 27093, -2996 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 25791, -6370 )
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 27858, -4161 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 28355, -5206 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 29027, -6230 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle10" parent="." instance=ExtResource( 4 )]
+position = Vector2( -25863, 69 )
+rotation = -1.5708
+
+[node name="Obstacle4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -19260, -806 )
+rotation = 1.45386
+
+[node name="Obstacle5" parent="." instance=ExtResource( 4 )]
+position = Vector2( -20877, -330 )
+rotation = 1.45386
+
+[node name="Polygon2D34" type="Polygon2D" parent="."]
+position = Vector2( -5279, 2298 )
+scale = Vector2( 0.195251, 1.00488 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( -5200, -2188 )
+polygon = PoolVector2Array( -8192, 0, 8192, 0, 8192, 4096, -8192, 4096 )
+
+[node name="Obstacle9" parent="." instance=ExtResource( 4 )]
+position = Vector2( -28617, -586.999 )
+rotation = 0.75174
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Obstacle8" parent="." instance=ExtResource( 4 )]
+position = Vector2( -25425, -863 )
+rotation = 1.5708
+
+[node name="Obstacle15" parent="." instance=ExtResource( 4 )]
+position = Vector2( -26770, -698 )
+rotation = 1.5708
+scale = Vector2( 2, 1 )
+
+[node name="Obstacle7" parent="." instance=ExtResource( 4 )]
+position = Vector2( -27137, -1345 )
+rotation = -1.46084
+scale = Vector2( 1.5, 1 )
+
+[node name="Obstacle52" parent="." instance=ExtResource( 1 )]
+position = Vector2( -18618, 1269 )
+rotation = 1.21126
+scale = Vector2( 1.7, 1 )
+
+[node name="Obstacle2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -11591, 115 )
+rotation = 1.71371
+
+[node name="Enemy2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -2854, -244 )
+
+[node name="Obstacle61" parent="." instance=ExtResource( 1 )]
+position = Vector2( -862, -8800 )
+scale = Vector2( 2, 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 1550, -788 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="Polygon2D16" type="Polygon2D" parent="."]
+position = Vector2( -4262, -20029 )
+scale = Vector2( -2.16446, 1.98485 )
+offset = Vector2( 2584, -676 )
+polygon = PoolVector2Array( -316, -292, -175.938, -417.657, 2163.14, -2516.18, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport" type="Sprite" parent="."]
+position = Vector2( 1550, -788 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D12" type="Polygon2D" parent="."]
+position = Vector2( 1662, -3507.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport10" type="Sprite" parent="."]
+position = Vector2( 1662, -3507.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D18" type="Polygon2D" parent="."]
+position = Vector2( -6981, -5510.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport15" type="Sprite" parent="."]
+position = Vector2( -6981, -5510.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D19" type="Polygon2D" parent="."]
+position = Vector2( -6189, -5510.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport16" type="Sprite" parent="."]
+position = Vector2( -6189, -5510.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D35" type="Polygon2D" parent="."]
+position = Vector2( -10648, -13014.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport31" type="Sprite" parent="."]
+position = Vector2( -10648, -13014.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D36" type="Polygon2D" parent="."]
+position = Vector2( -11835, -13014.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport32" type="Sprite" parent="."]
+position = Vector2( -11835, -13014.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D37" type="Polygon2D" parent="."]
+position = Vector2( -19746, -25231.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport33" type="Sprite" parent="."]
+position = Vector2( -19746, -25231.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D38" type="Polygon2D" parent="."]
+position = Vector2( -21522, -25231.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport34" type="Sprite" parent="."]
+position = Vector2( -21522, -25231.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D39" type="Polygon2D" parent="."]
+position = Vector2( -6157, -22298.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport35" type="Sprite" parent="."]
+position = Vector2( -6157, -22298.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D40" type="Polygon2D" parent="."]
+position = Vector2( -5054, -22298.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport36" type="Sprite" parent="."]
+position = Vector2( -5054, -22298.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D41" type="Polygon2D" parent="."]
+position = Vector2( 21613, -20603.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport37" type="Sprite" parent="."]
+position = Vector2( 21613, -20603.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D42" type="Polygon2D" parent="."]
+position = Vector2( 22878, -20603.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport38" type="Sprite" parent="."]
+position = Vector2( 22878, -20603.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D43" type="Polygon2D" parent="."]
+position = Vector2( 8775, -22183.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport39" type="Sprite" parent="."]
+position = Vector2( 8775, -22183.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D44" type="Polygon2D" parent="."]
+position = Vector2( 10659, -22183.8 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport40" type="Sprite" parent="."]
+position = Vector2( 10659, -22183.8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D45" type="Polygon2D" parent="."]
+position = Vector2( 3004.88, -23323.8 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport41" type="Sprite" parent="."]
+position = Vector2( 3004.88, -23323.8 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D46" type="Polygon2D" parent="."]
+position = Vector2( 4287.88, -23323.8 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport42" type="Sprite" parent="."]
+position = Vector2( 4287.88, -23323.8 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D47" type="Polygon2D" parent="."]
+position = Vector2( -3552.13, -25490.8 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport43" type="Sprite" parent="."]
+position = Vector2( -3552.13, -25490.8 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D48" type="Polygon2D" parent="."]
+position = Vector2( -8014.13, -25590.8 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport44" type="Sprite" parent="."]
+position = Vector2( -8014.13, -25590.8 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D49" type="Polygon2D" parent="."]
+position = Vector2( -11808.1, -16037.8 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport45" type="Sprite" parent="."]
+position = Vector2( -11808.1, -16037.8 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D50" type="Polygon2D" parent="."]
+position = Vector2( -12857.1, -16037.8 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport46" type="Sprite" parent="."]
+position = Vector2( -12857.1, -16037.8 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D51" type="Polygon2D" parent="."]
+position = Vector2( -19611.1, -22307.8 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport47" type="Sprite" parent="."]
+position = Vector2( -19611.1, -22307.8 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D52" type="Polygon2D" parent="."]
+position = Vector2( 24331.9, -2421.75 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport48" type="Sprite" parent="."]
+position = Vector2( 24331.9, -2421.75 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D53" type="Polygon2D" parent="."]
+position = Vector2( 25811.9, -2421.75 )
+scale = Vector2( -0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport49" type="Sprite" parent="."]
+position = Vector2( 25811.9, -2421.75 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D31" type="Polygon2D" parent="."]
+position = Vector2( 14907, -16118 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport28" type="Sprite" parent="."]
+position = Vector2( 14907, -16118 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D33" type="Polygon2D" parent="."]
+position = Vector2( 5810, -22973 )
+color = Color( 1, 1, 1, 0.976471 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport30" type="Sprite" parent="."]
+position = Vector2( 5810, -22973 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D32" type="Polygon2D" parent="."]
+position = Vector2( 11283, -11557 )
+color = Color( 1, 1, 1, 0.831373 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport29" type="Sprite" parent="."]
+position = Vector2( 11283, -11557 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D21" type="Polygon2D" parent="."]
+position = Vector2( -1952, -8383.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport18" type="Sprite" parent="."]
+position = Vector2( -1952, -8383.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D22" type="Polygon2D" parent="."]
+position = Vector2( -1075, -8383.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport19" type="Sprite" parent="."]
+position = Vector2( -1075, -8383.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D23" type="Polygon2D" parent="."]
+position = Vector2( -138, -8383.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport20" type="Sprite" parent="."]
+position = Vector2( -138, -8383.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D25" type="Polygon2D" parent="."]
+position = Vector2( 2067, -11921.7 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport22" type="Sprite" parent="."]
+position = Vector2( 2067, -11921.7 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D26" type="Polygon2D" parent="."]
+position = Vector2( 1343, -11921.7 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport23" type="Sprite" parent="."]
+position = Vector2( 1343, -11921.7 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D27" type="Polygon2D" parent="."]
+position = Vector2( 7336, -9565.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport24" type="Sprite" parent="."]
+position = Vector2( 7336, -9565.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D28" type="Polygon2D" parent="."]
+position = Vector2( -13957, -4256.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport25" type="Sprite" parent="."]
+position = Vector2( -13957, -4256.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D29" type="Polygon2D" parent="."]
+position = Vector2( -17460, -4256.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport26" type="Sprite" parent="."]
+position = Vector2( -17460, -4256.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D30" type="Polygon2D" parent="."]
+position = Vector2( -15730, -4256.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport27" type="Sprite" parent="."]
+position = Vector2( -15730, -4256.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D13" type="Polygon2D" parent="."]
+position = Vector2( 2862, -3507.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport11" type="Sprite" parent="."]
+position = Vector2( 2862, -3507.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D14" type="Polygon2D" parent="."]
+position = Vector2( 4550, -5491.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport12" type="Sprite" parent="."]
+position = Vector2( 4550, -5491.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D15" type="Polygon2D" parent="."]
+position = Vector2( 3166, -5491.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport13" type="Sprite" parent="."]
+position = Vector2( 3166, -5491.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D17" type="Polygon2D" parent="."]
+position = Vector2( -1801, -5514.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport14" type="Sprite" parent="."]
+position = Vector2( -1801, -5514.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( 3011, -788 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport2" type="Sprite" parent="."]
+position = Vector2( 3011, -788 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2( 5665, -788 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport3" type="Sprite" parent="."]
+position = Vector2( 5665, -788 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2( 7047, -788 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport4" type="Sprite" parent="."]
+position = Vector2( 7047, -788 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+position = Vector2( 9758, -788 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport5" type="Sprite" parent="."]
+position = Vector2( 9758, -788 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D6" type="Polygon2D" parent="."]
+position = Vector2( 11337, -788 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport6" type="Sprite" parent="."]
+position = Vector2( 11337, -788 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D7" type="Polygon2D" parent="."]
+position = Vector2( 12688, -788 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport7" type="Sprite" parent="."]
+position = Vector2( 12688, -788 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D8" type="Polygon2D" parent="."]
+position = Vector2( 13896, -788 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport8" type="Sprite" parent="."]
+position = Vector2( 13896, -788 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Polygon2D10" type="Polygon2D" parent="."]
+position = Vector2( 12507, -4136.75 )
+scale = Vector2( 0.25, 0.25 )
+color = Color( 1, 1, 1, 0.607843 )
+polygon = PoolVector2Array( -316, -292, 260, -280, 260, 296, -2108, 3468, -4020, 3436 )
+
+[node name="MiscSpritesSpriteExport9" type="Sprite" parent="."]
+position = Vector2( 12507, -4136.75 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 8050, -1475 )
+
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+position = Vector2( 122, -129 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+color = Color( 1, 1, 1, 0.509804 )
+polygon = PoolVector2Array( -29128, -25718, -3123, 143, -7002, 287, -32648, -24712 )
+
+[node name="Scene07345" type="Sprite" parent="."]
+visible = false
+position = Vector2( -2026, -4018 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 7 )
+
+[node name="Obstacle68" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5728, -21964 )
+rotation = 3.14159
+scale = Vector2( 0.5, 2 )
+
+[node name="Obstacle60" parent="." instance=ExtResource( 1 )]
+position = Vector2( -7468, -24709 )
+rotation = -1.57055
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle62" parent="." instance=ExtResource( 1 )]
+position = Vector2( -7468, -20861 )
+rotation = -1.57055
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle63" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4551, -25082 )
+rotation = -1.57055
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle83" parent="." instance=ExtResource( 1 )]
+position = Vector2( -9751, -24709 )
+rotation = -1.57055
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle55" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8955, -1988 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle84" parent="." instance=ExtResource( 1 )]
+position = Vector2( -12288, -24709 )
+rotation = -1.57055
+scale = Vector2( 2, 0.75 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Obstacle11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 9139, 449 )
+rotation = -1.5708
+
+[node name="Obstacle16" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2579, -1196 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle141" parent="." instance=ExtResource( 1 )]
+position = Vector2( -11028, -22207 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle142" parent="." instance=ExtResource( 1 )]
+position = Vector2( -11673, -22784 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle143" parent="." instance=ExtResource( 1 )]
+position = Vector2( -12126, -23282 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle144" parent="." instance=ExtResource( 1 )]
+position = Vector2( -12658, -23780 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle145" parent="." instance=ExtResource( 1 )]
+position = Vector2( -14849, -21023 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle146" parent="." instance=ExtResource( 1 )]
+position = Vector2( -14849, -21714 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle147" parent="." instance=ExtResource( 1 )]
+position = Vector2( -14867, -22208 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle148" parent="." instance=ExtResource( 1 )]
+position = Vector2( -17390, -22693 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle149" parent="." instance=ExtResource( 1 )]
+position = Vector2( -18019, -22469 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Obstacle150" parent="." instance=ExtResource( 1 )]
+position = Vector2( -16591, -23080 )
+rotation = 3.14159
+scale = Vector2( 0.1, 2 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 10626, -2278 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 6 )]
+position = Vector2( -17105, -2293 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 12116, -3253 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 12713, -3253 )
+
+[node name="Enemy11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 11399, -4227 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy12" parent="." instance=ExtResource( 10 )]
+position = Vector2( 10411, -1509 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 14990, -252 )
+
+[node name="Enemy14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 18216, -232 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 23928, -238 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy60" parent="." instance=ExtResource( 6 )]
+position = Vector2( 26528, -249 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy62" parent="." instance=ExtResource( 6 )]
+position = Vector2( 24973, -597 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 25720, -1764 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 6 )]
+position = Vector2( -26666, -2920 )
+
+[node name="Enemy20" parent="." instance=ExtResource( 6 )]
+position = Vector2( -26365, -2089 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 10 )]
+position = Vector2( -25337, -2099 )
+
+[node name="Enemy17" parent="." instance=ExtResource( 10 )]
+position = Vector2( -6068, -7631 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy18" parent="." instance=ExtResource( 6 )]
+position = Vector2( 9731, -12274 )
+scale = Vector2( -1, 1 )
+
+[node name="Maiden-01" type="Sprite" parent="."]
+position = Vector2( 978, -28062 )
+texture = ExtResource( 14 )
+
+[node name="Heart-01" type="Sprite" parent="."]
+position = Vector2( 991, -28262 )
+texture = ExtResource( 13 )
+
+[node name="Enemy21" parent="." instance=ExtResource( 10 )]
+position = Vector2( 184, -28069 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy22" parent="." instance=ExtResource( 11 )]
+position = Vector2( -15794, -3650 )
+
+[node name="Enemy19" parent="." instance=ExtResource( 11 )]
+position = Vector2( -24190, -1085 )
+
+[node name="Enemy23" parent="." instance=ExtResource( 11 )]
+position = Vector2( -5202, -4897 )
+
+[node name="Enemy24" parent="." instance=ExtResource( 11 )]
+position = Vector2( 26254, -4439 )
+
+[node name="Enemy25" parent="." instance=ExtResource( 6 )]
+position = Vector2( -9044, 1953 )
+
+[node name="Enemy26" parent="." instance=ExtResource( 6 )]
+position = Vector2( 18159, -8925 )
+
+[node name="Enemy27" parent="." instance=ExtResource( 11 )]
+position = Vector2( 17526, -8922 )
+
+[node name="Enemy28" parent="." instance=ExtResource( 10 )]
+position = Vector2( 9143, -21561 )
+
+[node name="Enemy29" parent="." instance=ExtResource( 6 )]
+position = Vector2( 9715, -21572 )
+
+[node name="Enemy30" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7752, -21578 )
+
+[node name="Enemy31" parent="." instance=ExtResource( 11 )]
+position = Vector2( 7462, -21562 )
+
+[node name="Enemy32" parent="." instance=ExtResource( 11 )]
+position = Vector2( 8470, -21566 )
+
+[node name="Enemy33" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1937, -19821 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy34" parent="." instance=ExtResource( 11 )]
+position = Vector2( 895, -18108 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy35" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1850, -24974 )
+
+[node name="Enemy36" parent="." instance=ExtResource( 6 )]
+position = Vector2( 11031, -16367 )
+
+[node name="Enemy37" parent="." instance=ExtResource( 6 )]
+position = Vector2( 13123, -23050 )
+
+[node name="Enemy38" parent="." instance=ExtResource( 10 )]
+position = Vector2( 10977, -21549 )
+
+[node name="Enemy39" parent="." instance=ExtResource( 11 )]
+position = Vector2( 12842, -23059 )
+
+[node name="Enemy40" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5892, -24649 )
+
+[node name="Enemy41" parent="." instance=ExtResource( 6 )]
+position = Vector2( 202, -24989 )
+
+[node name="Enemy63" parent="." instance=ExtResource( 6 )]
+position = Vector2( 202, -24989 )
+
+[node name="Enemy42" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1232, -24989 )
+
+[node name="Enemy43" parent="." instance=ExtResource( 11 )]
+position = Vector2( 962, -24989 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy44" parent="." instance=ExtResource( 11 )]
+position = Vector2( 27773, -10370 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy45" parent="." instance=ExtResource( 6 )]
+position = Vector2( 27777, -11118 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy46" parent="." instance=ExtResource( 10 )]
+position = Vector2( -10747, -24981 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy48" parent="." instance=ExtResource( 10 )]
+position = Vector2( -12500, -24981 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy49" parent="." instance=ExtResource( 10 )]
+position = Vector2( -14876, -24981 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy47" parent="." instance=ExtResource( 6 )]
+position = Vector2( -9059, -24969 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy50" parent="." instance=ExtResource( 6 )]
+position = Vector2( -11078, -24969 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy51" parent="." instance=ExtResource( 16 )]
+position = Vector2( 6122, -3811 )
+
+[node name="Enemy52" parent="." instance=ExtResource( 16 )]
+position = Vector2( 13580, -259 )
+
+[node name="Enemy53" parent="." instance=ExtResource( 16 )]
+position = Vector2( 6735, -11652 )
+
+[node name="Enemy54" parent="." instance=ExtResource( 16 )]
+position = Vector2( -2338, -17083 )
+
+[node name="Enemy55" parent="." instance=ExtResource( 16 )]
+position = Vector2( -7713, -24982 )
+
+[node name="Enemy56" parent="." instance=ExtResource( 16 )]
+position = Vector2( 10105, -21569 )
+
+[node name="Enemy57" parent="." instance=ExtResource( 16 )]
+position = Vector2( 10546, -9887 )
+
+[node name="Enemy58" parent="." instance=ExtResource( 16 )]
+position = Vector2( -14332, 3177 )
+
+[node name="Enemy59" parent="." instance=ExtResource( 16 )]
+position = Vector2( 24385, -238 )
+
+[node name="Enemy61" parent="." instance=ExtResource( 10 )]
+position = Vector2( 18605, -1516 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 16 )]
+position = Vector2( -771, -9089 )
+
+[node name="Rope-01" type="Sprite" parent="."]
+position = Vector2( 1220, -28704 )
+texture = ExtResource( 15 )
+
+[node name="Rope-02" type="Sprite" parent="."]
+position = Vector2( 1220, -29684 )
+texture = ExtResource( 15 )
+
+[node name="Rope-03" type="Sprite" parent="."]
+position = Vector2( 1681, -30143 )
+rotation = 1.5708
+texture = ExtResource( 15 )
+
+[node name="Rope-04" type="Sprite" parent="."]
+position = Vector2( 2664, -30140 )
+rotation = 1.5708
+texture = ExtResource( 15 )
+
+[node name="Goal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 812, -27810 )

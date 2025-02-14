@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ninjaRun.mp3-6e5e239987d2503ee74abd4f0a30d4aa.mp3str"
+
+[deps]
+
+source_file="res://SFX/new/ninjaRun.mp3"
+dest_files=[ "res://.import/ninjaRun.mp3-6e5e239987d2503ee74abd4f0a30d4aa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

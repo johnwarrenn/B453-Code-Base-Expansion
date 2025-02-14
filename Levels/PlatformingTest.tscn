@@ -1,0 +1,82 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Obstacles/LongPlatform8.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Obstacles/LongPlatform1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Obstacles/LongPlatform3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Obstacles/Obstacle2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Obstacles/LongPlatform2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Obstacles/Platform6.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Obstacles/Obstacle1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Obstacles/LongPlatform4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Obstacles/LongPlatform6.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Obstacles/Platform1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Obstacles/LongPlatform5.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Obstacles/Obstacle5.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Obstacles/Platform2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Obstacles/Obstacle3.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Obstacles/Platform5.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Obstacles/Obstacle4.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Obstacles/Platform4.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Obstacles/LetterIObstacle.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Obstacles/Platform3.tscn" type="PackedScene" id=19]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Platforming" type="Node2D" parent="."]
+
+[node name="Obstacle" parent="Platforming" instance=ExtResource( 18 )]
+position = Vector2( 3685, -643 )
+
+[node name="Obstacle2" parent="Platforming" instance=ExtResource( 2 )]
+position = Vector2( 9805, 590 )
+
+[node name="Obstacle3" parent="Platforming" instance=ExtResource( 5 )]
+position = Vector2( 8436, -973 )
+
+[node name="Obstacle4" parent="Platforming" instance=ExtResource( 3 )]
+position = Vector2( 5848, -1965 )
+
+[node name="Obstacle5" parent="Platforming" instance=ExtResource( 11 )]
+position = Vector2( 11986, -167 )
+
+[node name="Obstacle6" parent="Platforming" instance=ExtResource( 8 )]
+position = Vector2( 1913, 700 )
+
+[node name="Obstacle7" parent="Platforming" instance=ExtResource( 9 )]
+position = Vector2( 14238, -880 )
+
+[node name="Obstacle8" parent="Platforming" instance=ExtResource( 1 )]
+position = Vector2( 5724, 601 )
+
+[node name="Obstacle9" parent="Platforming" instance=ExtResource( 7 )]
+position = Vector2( 1272, -1272 )
+
+[node name="Obstacle10" parent="Platforming" instance=ExtResource( 4 )]
+position = Vector2( 1986, -513 )
+
+[node name="Obstacle11" parent="Platforming" instance=ExtResource( 14 )]
+position = Vector2( 5556, -683 )
+
+[node name="Obstacle12" parent="Platforming" instance=ExtResource( 16 )]
+position = Vector2( 6346, -42 )
+
+[node name="Obstacle13" parent="Platforming" instance=ExtResource( 12 )]
+position = Vector2( 1887, 295 )
+
+[node name="Obstacle14" parent="Platforming" instance=ExtResource( 10 )]
+position = Vector2( 570, -2178 )
+
+[node name="Obstacle15" parent="Platforming" instance=ExtResource( 13 )]
+position = Vector2( -679, -684 )
+
+[node name="Obstacle16" parent="Platforming" instance=ExtResource( 19 )]
+position = Vector2( -1505, 282 )
+
+[node name="Obstacle17" parent="Platforming" instance=ExtResource( 17 )]
+position = Vector2( 2671, -3043 )
+
+[node name="Obstacle18" parent="Platforming" instance=ExtResource( 15 )]
+position = Vector2( 6562, -2793 )
+
+[node name="Obstacle19" parent="Platforming" instance=ExtResource( 6 )]
+position = Vector2( 11345, -1934 )

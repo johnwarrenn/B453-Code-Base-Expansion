@@ -1,0 +1,255 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Singletons/HUD.gd" type="Script" id=1]
+[ext_resource path="res://GameOver/GameOver.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Pause/PauseMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Font/NeverSettleDemo-z8dnX.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Health/Health_Full.png" type="Texture" id=5]
+[ext_resource path="res://Health/Health_TwoThirds.png" type="Texture" id=6]
+[ext_resource path="res://Health/Health_OneThird.png" type="Texture" id=7]
+[ext_resource path="res://Font/go3v2.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="Animation" id=5]
+resource_name = "FadeOut"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Ascend:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Ascend:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Ascend:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Ascend:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "two",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "one",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "three",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+outline_size = 4
+outline_color = Color( 0.8, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 108
+outline_size = 4
+outline_color = Color( 0.8, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 250
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 8 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Control" type="Control" parent="UILayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/Control"]
+root_node = NodePath("../Escape")
+anims/FadeOut = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="UILayer/Control"]
+position = Vector2( 384.614, 55.237 )
+rotation = -0.0122871
+scale = Vector2( 0.374, 0.374 )
+frames = SubResource( 1 )
+animation = "three"
+
+[node name="Label" type="Label" parent="UILayer/Control"]
+margin_left = 30.6136
+margin_top = 51.237
+margin_right = 158.614
+margin_bottom = 249.237
+rect_rotation = -13.8078
+custom_fonts/font = SubResource( 2 )
+text = "HP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scorenum" type="Label" parent="UILayer/Control"]
+margin_left = 1263.0
+margin_top = 954.0
+margin_right = 1893.0
+margin_bottom = 1152.0
+custom_fonts/font = SubResource( 7 )
+text = "000000000"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scorelabel" type="Label" parent="UILayer/Control"]
+margin_left = 1729.0
+margin_top = 920.0
+margin_right = 1879.0
+margin_bottom = 1118.0
+rect_rotation = -13.8078
+custom_fonts/font = SubResource( 2 )
+text = "score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" parent="UILayer/Control" instance=ExtResource( 3 )]
+
+[node name="Escape" type="Label" parent="UILayer/Control"]
+margin_left = 638.0
+margin_top = 64.0
+margin_right = 3336.0
+margin_bottom = 1607.0
+custom_fonts/font = SubResource( 3 )
+text = "escape"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ascend" type="Label" parent="UILayer/Control"]
+margin_left = 691.0
+margin_top = 341.0
+margin_right = 1587.0
+margin_bottom = 454.0
+custom_fonts/font = SubResource( 4 )
+text = "Ascend the Tower!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UILayer/Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="GameOver" parent="." instance=ExtResource( 2 )]

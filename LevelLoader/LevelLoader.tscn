@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Staging.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Camera/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://LevelLoader/LevelLoader.gd" type="Script" id=3]
+
+[node name="LevelLoader" type="Node"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="Camera" parent="CanvasLayer" instance=ExtResource( 2 )]
+current = false
+
+[node name="LevelStaging" parent="CanvasLayer" instance=ExtResource( 1 )]

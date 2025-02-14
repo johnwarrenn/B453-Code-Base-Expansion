@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Enemy/ThrowingStar/sprEnAtkThrowStart1-02.png" type="Texture" id=1]
+[ext_resource path="res://Hitbox/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NinjaStar/NinjaStar.gd" type="Script" id=3]
+[ext_resource path="res://Enemy/ThrowingStar/sprEnAtkThrowStart2-02.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.0
+height = 64.0
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="NinjaStar" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 3 )
+speed = 2500.0
+
+[node name="WallDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDetector"]
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="WallDetector"]
+frames = SubResource( 3 )
+playing = true
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Hitbox" parent="." instance=ExtResource( 2 )]
+visible = false
+collision_layer = 256
+collision_mask = 2
+damage = 1.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="WallDetector" to="." method="_on_WallDetector_body_entered"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]
+
+[editable path="Hitbox"]

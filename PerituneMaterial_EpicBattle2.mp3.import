@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PerituneMaterial_EpicBattle2.mp3-f60b95e3160ee0dc1ef49e444147b6a3.mp3str"
+
+[deps]
+
+source_file="res://PerituneMaterial_EpicBattle2.mp3"
+dest_files=[ "res://.import/PerituneMaterial_EpicBattle2.mp3-f60b95e3160ee0dc1ef49e444147b6a3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

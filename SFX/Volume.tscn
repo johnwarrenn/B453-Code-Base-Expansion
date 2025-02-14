@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://SFX/VolumeSlider.gd" type="Script" id=1]
+[ext_resource path="res://Font/go3v2.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://coverup_spriteExport.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="Volume" type="Label"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "Volume (mouse wheel)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+margin_left = 556.0
+margin_top = -32.0
+margin_right = 572.0
+margin_bottom = -9.0
+rect_scale = Vector2( 6.22159, 4.43725 )
+max_value = 1.0
+step = 0.05
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoverupSpriteExport" type="Sprite" parent="VolumeSlider"]
+position = Vector2( 8.67946, 10.1414 )
+scale = Vector2( 0.160731, 0.225365 )
+texture = ExtResource( 3 )
+
+[connection signal="mouse_exited" from="VolumeSlider" to="VolumeSlider" method="_on_VolumeSlider_mouse_exited"]
+[connection signal="value_changed" from="VolumeSlider" to="VolumeSlider" method="_on_VolumeSlider_value_changed"]

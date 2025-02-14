@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PerituneMaterial_Holy_Place.mp3-e42c20208cbce83322ee7a05d81d99cb.mp3str"
+
+[deps]
+
+source_file="res://Victory/PerituneMaterial_Holy_Place.mp3"
+dest_files=[ "res://.import/PerituneMaterial_Holy_Place.mp3-e42c20208cbce83322ee7a05d81d99cb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
