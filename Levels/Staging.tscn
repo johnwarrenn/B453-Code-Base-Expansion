@@ -44,7 +44,6 @@ polygon = PoolVector2Array( -4485, -500, 260, -280, 3009, -486, 1462, 4855, -490
 
 [node name="Polygon2D12" type="Polygon2D" parent="GeometryBG"]
 position = Vector2( 78227, -2954 )
-rotation = -2.53518e-06
 scale = Vector2( 2, 2 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
@@ -55,7 +54,6 @@ scale = Vector2( 2, 2 )
 
 [node name="Polygon2D14" type="Polygon2D" parent="GeometryBG"]
 position = Vector2( 33586, -13042 )
-rotation = -2.53518e-06
 scale = Vector2( 2, 2 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -29846, -7543, -22878, 72, -26398, 0, -31498, -6466 )
@@ -2152,11 +2150,11 @@ region_rect = Rect2( 46.3015, 323.13, 663.445, 674.806 )
 position = Vector2( 8050, -1475 )
 
 [node name="Polygon2D9" type="Polygon2D" parent="."]
-position = Vector2( 122, -129 )
+position = Vector2( 95, -160 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 color = Color( 1, 1, 1, 0.509804 )
-polygon = PoolVector2Array( -29128, -25718, -3123, 143, -7002, 287, -32648, -24712 )
+polygon = PoolVector2Array( -29128, -25718, -3123, 143, -7002, 287, -8779, -1378.98, -9742.01, -2371.98, -32648, -24712 )
 
 [node name="Scene07345" type="Sprite" parent="."]
 visible = false
@@ -2446,30 +2444,39 @@ scale = Vector2( -1, 1 )
 
 [node name="Enemy51" parent="." instance=ExtResource( 16 )]
 position = Vector2( 6122, -3811 )
+run_xspeed = 2000.0
 
 [node name="Enemy52" parent="." instance=ExtResource( 16 )]
 position = Vector2( 13580, -259 )
+run_xspeed = 2000.0
 
 [node name="Enemy53" parent="." instance=ExtResource( 16 )]
 position = Vector2( 6735, -11652 )
+run_xspeed = 2000.0
 
 [node name="Enemy54" parent="." instance=ExtResource( 16 )]
 position = Vector2( -2338, -17083 )
+run_xspeed = 2000.0
 
 [node name="Enemy55" parent="." instance=ExtResource( 16 )]
 position = Vector2( -7713, -24982 )
+run_xspeed = 2000.0
 
 [node name="Enemy56" parent="." instance=ExtResource( 16 )]
 position = Vector2( 10105, -21569 )
+run_xspeed = 2000.0
 
 [node name="Enemy57" parent="." instance=ExtResource( 16 )]
 position = Vector2( 10546, -9887 )
+run_xspeed = 2000.0
 
 [node name="Enemy58" parent="." instance=ExtResource( 16 )]
 position = Vector2( -14332, 3177 )
+run_xspeed = 2000.0
 
 [node name="Enemy59" parent="." instance=ExtResource( 16 )]
 position = Vector2( 24385, -238 )
+run_xspeed = 2000.0
 
 [node name="Enemy61" parent="." instance=ExtResource( 10 )]
 position = Vector2( 18605, -1516 )
@@ -2477,6 +2484,7 @@ scale = Vector2( -1, 1 )
 
 [node name="Enemy5" parent="." instance=ExtResource( 16 )]
 position = Vector2( -771, -9089 )
+run_xspeed = 2000.0
 
 [node name="Rope-01" type="Sprite" parent="."]
 position = Vector2( 1220, -28704 )

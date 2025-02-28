@@ -13,6 +13,7 @@ export var life : float = -1 setget set_life # Life of hitbox (In seconds)
 func _ready():
 	set_life(life)
 	
+	
 # Set the bounds of the hitbox using Rect2 (global pos)
 func set_global_rect(rect : Rect2):
 	var new_shape : RectangleShape2D = RectangleShape2D.new()

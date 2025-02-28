@@ -33,6 +33,7 @@ var jumps_left : int = max_jumps
 var iframe_sources : Dictionary = {"debuff": false, "dash": false}
 export(float) var life : float = 3
 export(PackedScene) var basic_attack_template;
+onready var raycast : RayCast2D = get_node("AttackRay")
 signal spawned(character)
 signal died(character)
 
@@ -50,6 +51,8 @@ func _init():
 	
 func _ready():
 	emit_signal("spawned", self)
+	
+	
 	
 func _process(delta):
 	if is_attacking:
@@ -74,6 +77,10 @@ func _process(delta):
 			$AnimatedSprite.play("jumpFalling")
 #	elif jump_endedt:
 #		$AnimatedSprite.play("jumpLanding")
+	
+	raycast.force_raycast_update()
+
+	
 
 func _physics_process(delta):
 #	Restore jumps if back on floor
@@ -89,7 +96,16 @@ func _physics_process(delta):
 	cur_yspeed_ps = _spd.y
 
 func basic_attack():
+	
 	if !is_attacking && !is_dashing && can_attack && is_on_floor():
+		if raycast.is_colliding():
+			var collider = raycast.get_collider()
+			
+			if collider.is_in_group("Walls"):
+
+				return
+			elif (collider.is_in_group("Hurtbox")):
+				print("raycast collided with hurtbox")
 	#	var _atk = Debris.create_object_at_location(basic_attack_template, global_position)
 	#	_atk.scale.x = dir
 	#	TODO: change later to be independent, not a child
@@ -100,7 +116,8 @@ func basic_attack():
 		_object.scale.x = dir
 		is_attacking = true
 		$AttackTimer.start()
-		return _object
+		
+		
 	
 func calc_yspeed():
 	var amount 
@@ -159,6 +176,7 @@ func set_player_dir(new_dir : int):
 	scale.x *= -1
 	dir = new_dir
 	print("new dir", dir)
+	raycast.cast_to.x *= -1
 	
 func start_jump():
 	if jumps_left <= 0 || is_dashing:

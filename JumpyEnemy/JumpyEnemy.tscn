@@ -38,6 +38,11 @@ shader_param/whiteness = 0.0
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "anticipate",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "default",
@@ -46,11 +51,6 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "jumpApex",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "swing",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
@@ -63,14 +63,14 @@ animations = [ {
 "name": "jumpLand",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "anticipate",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "jumpRise",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "swing",
 "speed": 5.0
 } ]
 
@@ -718,6 +718,8 @@ tracks/5/keys = {
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 score = 250
+jump_yspeed = 4250.0
+jump_xspeed = 3000.0
 
 [node name="Sight" type="Area2D" parent="." index="0"]
 collision_layer = 0

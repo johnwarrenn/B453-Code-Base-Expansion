@@ -29,21 +29,17 @@
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 5 )
-shader_param/Smooth = true
-shader_param/width = 16.0
-shader_param/outline_color = Color( 0, 0, 0, 1 )
-shader_param/pixel_size = 10
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 25 ) ],
+"loop": false,
+"name": "attack",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
@@ -51,14 +47,29 @@ animations = [ {
 "name": "hurt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ) ],
-"loop": false,
-"name": "attack",
-"speed": 15.0
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "jumpApex",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "jumpBefore",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "jumpFalling",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "jumpLanding",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ) ],
@@ -66,30 +77,15 @@ animations = [ {
 "name": "jumpRising",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "run",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "jumpLanding",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "roll",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 15 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "jumpApex",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "jumpFalling",
-"speed": 5.0
+"name": "run",
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=8]
@@ -375,6 +371,13 @@ anims/attack = SubResource( 9 )
 anims/default = SubResource( 11 )
 anims/hurt = SubResource( 12 )
 anims/no_slashes = SubResource( 13 )
+
+[node name="AttackRay" type="RayCast2D" parent="."]
+position = Vector2( 50, 0 )
+enabled = true
+cast_to = Vector2( 300, 0 )
+collision_mask = 512
+collide_with_areas = true
 
 [connection signal="on_damagers_changed" from="Hurtbox" to="." method="_on_Hurtbox_on_damagers_changed"]
 [connection signal="timeout" from="DebuffTimer" to="." method="_on_DebuffTimer_timeout"]

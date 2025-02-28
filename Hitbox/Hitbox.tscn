@@ -12,3 +12,4 @@ script = ExtResource( 1 )
 
 [connection signal="area_entered" from="." to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Hitbox_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_Hitbox_body_entered"]
