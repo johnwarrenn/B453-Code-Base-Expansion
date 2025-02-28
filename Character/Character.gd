@@ -78,6 +78,9 @@ func _process(delta):
 #	elif jump_endedt:
 #		$AnimatedSprite.play("jumpLanding")
 	
+	
+	#Forces an update for the raycast every frame, so that the raycast can see
+	#any collisions at any point
 	raycast.force_raycast_update()
 
 	
@@ -98,14 +101,17 @@ func _physics_process(delta):
 func basic_attack():
 	
 	if !is_attacking && !is_dashing && can_attack && is_on_floor():
+		
+		#This checks if the raycast is colliding with anything, and if it isn't, 
+		#allows the player to attack and spawn an attack hitbox with
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			
+			#if the object that's colliding with the raycast is a wall, return and
+			#do not complete the function
 			if collider.is_in_group("Walls"):
-
 				return
-			elif (collider.is_in_group("Hurtbox")):
-				print("raycast collided with hurtbox")
+				
 	#	var _atk = Debris.create_object_at_location(basic_attack_template, global_position)
 	#	_atk.scale.x = dir
 	#	TODO: change later to be independent, not a child
@@ -176,6 +182,8 @@ func set_player_dir(new_dir : int):
 	scale.x *= -1
 	dir = new_dir
 	print("new dir", dir)
+	
+	#Sets the raycast direction to the direction that the player is facing
 	raycast.cast_to.x *= -1
 	
 func start_jump():
