@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Obstacles/Platform3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Camera/Camera.tscn" type="PackedScene" id=2]
@@ -17,8 +17,14 @@
 [ext_resource path="res://rope-01.png" type="Texture" id=15]
 [ext_resource path="res://RunningEnemy/RunningEnemy.tscn" type="PackedScene" id=16]
 [ext_resource path="res://YinYang/YinYang.tscn" type="PackedScene" id=17]
+[ext_resource path="res://RangedPickup/StarPickup.tscn" type="PackedScene" id=18]
 
 [node name="LevelStaging" type="Node2D"]
+
+[node name="StarPickup" parent="." instance=ExtResource( 18 )]
+position = Vector2( 988, -144 )
+scale = Vector2( 2, 2 )
+z_index = 100
 
 [node name="TriggerNode2D" type="Node2D" parent="."]
 visible = false

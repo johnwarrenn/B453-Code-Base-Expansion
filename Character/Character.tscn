@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Hurtbox/Hurtbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/Updated/sprPcDefault.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Swipes/Player_Swipe_2.png" type="Texture" id=24]
 [ext_resource path="res://Art/Updated/sprPcAtk.png" type="Texture" id=25]
 [ext_resource path="res://Swipes/Player_Swipe_1.png" type="Texture" id=26]
+[ext_resource path="res://NinjaStar/NinjaStar.tscn" type="PackedScene" id=27]
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 5 )
@@ -298,10 +299,15 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=13]
 resource_name = "no_slashes"
 
+[sub_resource type="CapsuleShape2D" id=14]
+radius = 84.0
+height = 216.0
+
 [node name="Character" type="KinematicBody2D"]
 collision_mask = 260
 script = ExtResource( 3 )
 basic_attack_template = ExtResource( 4 )
+ninja_star_template = ExtResource( 27 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 4 )
@@ -378,6 +384,14 @@ enabled = true
 cast_to = Vector2( 300, 0 )
 collision_mask = 512
 collide_with_areas = true
+
+[node name="PickupID" type="Area2D" parent="." groups=["Player"]]
+collision_layer = 1024
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupID"]
+position = Vector2( -18, 44 )
+shape = SubResource( 14 )
 
 [connection signal="on_damagers_changed" from="Hurtbox" to="." method="_on_Hurtbox_on_damagers_changed"]
 [connection signal="timeout" from="DebuffTimer" to="." method="_on_DebuffTimer_timeout"]

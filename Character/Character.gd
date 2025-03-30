@@ -5,7 +5,7 @@ class_name Character
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"a
-
+var inherited_scale = 1
 var max_xspeed_ps : float = 3000
 var	cur_xspeed_ps : float = 0
 var inc_xspeed_ps : float = max_xspeed_ps/3
@@ -39,6 +39,9 @@ signal died(character)
 
 signal hp_changed(new_hp)
 
+var can_shoot_stars = false
+export(PackedScene) var ninja_star_template;
+
 func _init():
 	connect("spawned", Game, "_on_player_spawned")
 	connect("died", Game, "_on_player_died")
@@ -51,7 +54,7 @@ func _init():
 	
 func _ready():
 	emit_signal("spawned", self)
-	
+	inherited_scale = sign(scale.x)
 	
 	
 func _process(delta):
@@ -266,3 +269,16 @@ func _on_AttackCooldown_timeout():
 
 func _on_KnockbackFreezeTime_timeout():
 	is_knockback_frozen = false
+	
+	
+	
+func throw_star():
+	MusicPlayer.play_ninja_star()
+	
+	var _object : Node = ninja_star_template.instance()
+	add_child(_object)
+	_object.set_as_toplevel(true)
+	_object.global_position = self.global_position 
+	_object.global_position.x = _object.global_position.x  + (dir * 200)
+	_object.dir = self.dir
+

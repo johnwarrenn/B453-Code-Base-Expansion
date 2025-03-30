@@ -13,8 +13,13 @@ var hitboxes : Array = [] #Things to apply damage to each frame
 
 
 func _on_Hurtbox_area_entered(hitbox):
+	
 	hitboxes.push_back(hitbox)
 	emit_signal("on_damagers_changed", hitboxes, {"added": hitbox, "removed" : null})
+	if hitbox.is_in_group("Hitbox"):
+		var star = hitbox.get_parent()
+		star.queue_free()
+	
 
 
 func _on_Hurtbox_area_exited(hitbox):

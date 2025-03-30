@@ -9,6 +9,7 @@ signal action_pressed
 signal dash_pressed
 signal jump_pressed
 signal jump_released
+signal shoot_pressed
 
 func get_xdir():
 	return _left_input + _right_input
@@ -33,3 +34,5 @@ func _input(event : InputEvent):
 			emit_signal("jump_pressed")
 		if event.is_action_released("ui_jump"):
 			emit_signal("jump_released")
+	if event.is_action_pressed("Shoot"):
+		emit_signal("shoot_pressed")

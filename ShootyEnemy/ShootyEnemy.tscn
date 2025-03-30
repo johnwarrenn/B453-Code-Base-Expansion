@@ -31,6 +31,7 @@ func spawn_star():
 	add_child(_object)
 	_object.set_as_toplevel(true)
 	_object.global_position = global_position 
+	_object.global_position.x = _object.global_position.x  + 200
 	_object.dir = inherited_scale
 
 func _on_Sight_body_entered(body):
@@ -97,6 +98,8 @@ tracks/0/keys = {
 extents = Vector2( 683.5, 143 )
 
 [node name="Enemy" instance=ExtResource( 4 )]
+collision_layer = 258
+collision_mask = 260
 script = SubResource( 4 )
 ninja_star_template = ExtResource( 1 )
 
@@ -107,6 +110,10 @@ animation = "throw"
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( -38.5, 91 )
 shape = SubResource( 2 )
+
+[node name="Hurtbox" parent="." index="2"]
+collision_layer = 514
+collision_mask = 257
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( -38.5, 91 )
