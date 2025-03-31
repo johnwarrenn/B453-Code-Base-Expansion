@@ -19,6 +19,6 @@ func _ready():
 func _on_StarPickup_area_entered(area):
 	if area.is_in_group("Player"):
 		var player = area.get_parent()
-		player.can_shoot_stars = true
+		
 		GInput.connect("shoot_pressed", player, "throw_star")
 		self.queue_free()
